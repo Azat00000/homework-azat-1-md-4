@@ -32,5 +32,25 @@ def get_text_message(message):
     elif ms_text == "/dog" or ms_text == "Прислать собаку":
         bot.send_message(chat_id, text="ещё не готово...")
 
+    elif ms_text == "WEB-камера":
+        bot.send_message(chat_id, text = "ещё не готово...")
+
+    elif ms_text == "Упражнение":
+        bot.send_message(chat_id, text = "ещё не готова...")
+
+    elif ms_text == "Помощь" or ms_text == "/help":
+
+        bot.send_message(chat_id, "Автор: Швец Андрей")
+        key1 = types.InlineKeyboardMarkup()
+        btn1 = types.InlineKeyboardButton(text="Напишите автору", url="https://t.me/user59387")
+        key1.add(btn1)
+        img = open('Швец Андрей.png', 'rb')
+        bot.send_photo(message.chat.id, img, reply_markup=key1)
+
+    else:
+
+        bot.send_message(chat_id, text="Я тебя слышу! Ваше сообщение: " + ms_text )
+
+bot.polling(none_stop=True, interval=0)
     
 
